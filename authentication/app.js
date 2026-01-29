@@ -6,7 +6,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use('/auth', authRouter)
+app.use(authRouter)
 
 app.get('/auth', (req,res) =>{
     res.status(200).send(`Welcome to the auth service`)

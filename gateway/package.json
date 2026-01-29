@@ -1,0 +1,17 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "This is the gatewat service for the entire the backend app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "gateway": "nodemon server.js"
+  },
+  "author": "pinaki sankar ray",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-http-proxy": "^2.1.2",
+    "nodemon": "^3.1.11"
+  }
+}
