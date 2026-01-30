@@ -101,3 +101,11 @@ export const logout = async (req, res) => {
     res.status(500).send({ status: "error", message: error.message });
   }
 };
+
+export const verify = async (req,res) =>{
+  try {
+    res.status(200).send(req.user)
+  } catch (error) {
+    res.status(401).send({status: 'error', message: error.message})
+  }
+}
