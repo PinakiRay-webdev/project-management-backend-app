@@ -1,0 +1,18 @@
+{
+  "name": "projects_and_task",
+  "version": "1.0.0",
+  "description": "This is the service of project and it's tasks",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "project": "nodemon service.js"
+  },
+  "author": "pinaki sankar ray",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5",
+    "nodemon": "^3.1.11"
+  }
+}
