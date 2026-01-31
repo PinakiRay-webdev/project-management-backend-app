@@ -1,6 +1,6 @@
 import axios from "axios"
 const authGuard = async (req,res,next) =>{
-    const token = req.cookies.token || req.headers.authorization?.split(" ")[1]
+    const token = req.cookies.token
 
     if(!token){
         res.status(401).send({status: 'error', message: 'Unauthorized'})
@@ -23,3 +23,5 @@ const authGuard = async (req,res,next) =>{
         res.status(401).json({ message: "Invalid or expired token" });
     }
 }
+
+export default authGuard
