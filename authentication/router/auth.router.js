@@ -1,7 +1,6 @@
 import express from "express"
-import { login, logout, register, viewProfile } from "../controller/auth.controller.js";
+import { login, logout, register, verify, viewProfile } from "../controller/auth.controller.js";
 import protect from "../middleware/protect.js";
-import { verify } from "jsonwebtoken";
 
 const authRouter = express.Router()
 
