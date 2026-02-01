@@ -1,4 +1,5 @@
 import Project from "../model/project.model.js";
+import Task from "../model/task.model.js";
 
 export const createProject = async(req,res) =>{
     try {
@@ -48,6 +49,7 @@ export const deleteProject = async(req,res) =>{
     try {
 
         const projectId = req.params.id
+        await Task.deleteMany({projectId: projectId})
         const deletedProject = await Project.findByIdAndDelete(projectId)
 
         if(!deletedProject){
