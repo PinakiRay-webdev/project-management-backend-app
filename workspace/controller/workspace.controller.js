@@ -27,39 +27,5 @@ export const displayAllWorkspace = async(req,res) =>{
     }
 }
 
-export const updateWorkspace = async(req,res) =>{
-    try {
 
-        const workspaceId = req.params.id
-        const updatedWorkspace = await Project.findByIdAndUpdate(workspaceId, req.body, {new: true})
-
-        if(!updatedWorkspace){
-            res.status(404).send({success: false, message: 'workspace not found to update'})
-            return;
-        }
-
-        res.status(200).send({success:true, updatedWorkspace})
-        
-    } catch (error) {
-        res.status(500).send({success:false, message:error.message})
-    }
-}
-
-export const deleteWorkspace = async(req,res) =>{
-    try {
-
-        const workspaceId = req.params.id
-        await Project.findByIdAndDelete(workspaceId)
-
-        if(!deletedProject){
-            res.status(404).send({success: false, message: 'workspace not found to delete'})
-            return;
-        }
-
-        res.status(200).send({success:true, message: `workspace with ID ${workspaceId} is deleted`})
-        
-    } catch (error) {
-        res.status(500).send({success:false, message:error.message})
-    }
-}
 
