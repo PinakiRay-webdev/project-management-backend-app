@@ -4,6 +4,6 @@ import { createWorkSpace, displayAllWorkspace } from "../controller/workspace.co
 const workspaceRouter = express.Router()
 
 workspaceRouter.post('/create', createWorkSpace)
-workspaceRouter.get('/workspaces',displayAllWorkspace)
+workspaceRouter.get('/',displayAllWorkspace)
 
 export default workspaceRouter
