@@ -88,11 +88,6 @@ export const viewProfile = async (req, res) => {
 
 export const logout = async (req, res) => {
   try {
-    const token = req.cookies.token;
-    if (!token) {
-      res.status(404).send({ status: "error", message: "user not found" });
-      return;
-    }
     res.clearCookie("token");
     res
       .status(200)
