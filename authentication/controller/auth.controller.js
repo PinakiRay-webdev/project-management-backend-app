@@ -44,12 +44,10 @@ export const login = async (req, res) => {
     const user = await authDB.findOne({ email });
 
     if (!user) {
-      res
-        .status(404)
-        .send({
-          status: "error",
-          message: `user with email id ${email} is not registered`,
-        });
+      res.status(404).send({
+        status: "error",
+        message: `user with email id ${email} is not registered`,
+      });
       return;
     }
 
@@ -97,10 +95,10 @@ export const logout = async (req, res) => {
   }
 };
 
-export const verify = async (req,res) =>{
+export const verify = async (req, res) => {
   try {
-    res.status(200).send({success: true, user: req.user})
+    res.status(200).send({ success: true, user: req.user });
   } catch (error) {
-    res.status(401).send({success: false, message: error.message})
+    res.status(401).send({ success: false, message: error.message });
   }
-}
+};
